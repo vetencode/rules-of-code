@@ -19,7 +19,7 @@
 - Manfaatkan setiap metode HTTP untuk satu endpoint:
   - Get /products => Mengembalikan daftar semua produk.
   - Get /products/{id} => Mengembalikan detail satu produk secara spesifik.
-  - Post /products => Endpoint untuk menyisipkan data produk baru.
+  - Post /products => Endpoint untuk menambah data produk baru.
   - Patch products/{id} => Memperbarui produk tertentu secara sederhana, misalnya hanya mengubah satu kolom status.
   - Put /products/{id} => Untuk memperbarui data secara massal dari satu baris di database, seperti nama, harga, dan kolom lainnya.
   - Delete /products/{id} => Untuk menghapus produk tertentu.
