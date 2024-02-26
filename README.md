@@ -32,7 +32,7 @@
 - Beri nama class dan id untuk form, tombol, modal, dan elemen lain secara konsisten untuk setiap views guna mengurangi kebingungan.
 
 ## 5. Javascript and jQuery
-- Sangat disarankan untuk menulis file js pada file .js yang terpisah dan dipanggil melalui asset (tidak disatukan dengan file views) untuk meringankan proses caching dan meminimalkan jumlah request.
+- Sangat disarankan untuk menulis file js pada file.js yang terpisah dan dipanggil melalui asset (tidak disatukan dengan file views) untuk optimalisasi proses caching dan meminimalkan jumlah request.
 
 ## 6. Gunakan vendor plugin yang konsisten dan sesuai kebutuhan.
 
@@ -45,7 +45,29 @@
 - Buat libraries sesuai dengan kebutuhan, seperti untuk payment gateway, mail messaging, dan layanan lainnya.
 - Buat dokumentasi yang baik untuk setiap method (fungsi) di library yang dibuat.
 
-## 9. Naming Functions dan Variabel
+## 9. API
+- Buat API seaman mungkin, sangat direkomendasikan untuk menggunakan Authentication dengan metode JWT (JSON Web Token)
+- Untuk proteksi tambahan bisa gunakan path key, (Setiap endpoint request harus disertai property ?key=YourPathKey (Optional,Recommended)
+- Pastikan buat template response yang konsisten, dan selalu sertakan property message, example:
+```
+{
+  "success": true,
+  "message": "Your Request Completed",
+  "data": [],
+}
+```
+- Gunakan HTTP Status Code yang sesuai
+  - **200 OK**: Permintaan berhasil.
+  - **201 Created**: Permintaan berhasil dan sumber daya baru telah dibuat.
+  - **400 Bad Request**: Permintaan tidak dapat diproses karena kesalahan klien yang dapat diidentifikasi (misalnya, data yang tidak valid).
+  - **401 Unauthorized**: Permintaan membutuhkan autentikasi atau autentikasi gagal.
+  - **403 Forbidden**: Server mengerti permintaan, tetapi menolak untuk mengotorisasi akses.
+  - **404 Not Found**: Sumber daya yang diminta tidak ditemukan.
+  - **405 Method Not Allowed**: Metode yang diminta tidak diizinkan untuk sumber daya yang diminta.
+  - **500 Internal Server Error**: Kesalahan umum pada server.
+  - **503 Service Unavailable**: Layanan tidak tersedia, server tidak dapat menangani permintaan.
+    
+## 10. Naming Functions dan Variabel
 - Beri nama fungsi yang mudah dimengerti. Disarankan menambah 1-2 baris dokumentasi serta contoh penggunaan, terutama jika fungsi berpotensi digunakan oleh banyak orang.
 - Sertakan tipe data pada parameter input functions dan return functions untuk memberikan gambaran lebih jelas tentang bagaimana fungsi digunakan (contoh: int, string, array, callable, nullable types).
 - Namakan variabel sesuai dengan isinya dan hindari penggunaan nama variabel yang terlalu singkat tanpa keterangan dokumentasi di samping atau di dekatnya.
