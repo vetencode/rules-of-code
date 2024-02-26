@@ -5,8 +5,9 @@
 - Kolom Foreign Key disarankan memiliki nama yang sama dengan nama tabel yang berelasi. Gunakan entitas yang berelasi jika perlu (contoh: berelasi ke tabel users, namun karena di tabel users ada banyak akses seperti pegawai, maka bisa menggunakan pegawai_id).
 - Gunakan softDelete pada setiap tabel yang membutuhkan data historis. Disarankan menggunakan softDelete di semua tabel.
 - Penamaan kolom timestamps dan softdelete umumnya menggunakan:
-  - created_by, created_date, updated_by, updated_date, deleted_by
-  Untuk Codeigniter3, sangat direkomendasikan menggunakan kolom timestamp bawaan Laravel. Atau penamaan dapat disesuaikan, namun yang terpenting adalah konsistensi untuk seluruh tabel yang menggunakan timestamps dan softdelete.
+  - Untuk **Codeigniter3*: **created_by**, **created_date**, **updated_by**, **updated_date**, **deleted_by**
+  - Untuk **Laravel*: sangat direkomendasikan menggunakan kolom timestamp bawaan Laravel
+  - Atau penamaan dapat disesuaikan, namun yang terpenting adalah konsistensi untuk seluruh tabel yang menggunakan timestamps dan softdelete
 
 ## 2. Modul (Codeigniter 3)
 - Buat modul yang sesuai dengan fiturnya, dengan nama yang sesuai.
