@@ -69,6 +69,15 @@
     
 ## 10. Naming Functions dan Variabel
 - Beri nama fungsi yang mudah dimengerti. Disarankan menambah 1-2 baris dokumentasi serta contoh penggunaan, terutama jika fungsi berpotensi digunakan oleh banyak orang.
-- Sertakan tipe data pada parameter input functions dan return functions untuk memberikan gambaran lebih jelas tentang bagaimana fungsi digunakan (contoh: int, string, array, callable, nullable types).
+- Sertakan tipe data pada parameter input functions dan return functions untuk memberikan gambaran lebih jelas tentang bagaimana fungsi digunakan
+  - contoh: **int**, **string**, **array**, **callable**, **nullable**
+  - jika memungkinkan menggunakan 2 tipe data sekaligus gunakan sesuatu seperti: **int|string**, **array|string**
+  - jika membuat null sebagai value default gunakan: **?string**, **?int**
+  ```php
+  function calculateAndFormat(int $harga_per_unit, int $jumlah_item, ?string $prefix = null): string {
+      $total = $harga_per_unit * $jumlah_item;
+      return ($prefix ? "$prefix " : '') . number_format($total, 0, ',', '.');
+  }
+  ```
 - Namakan variabel sesuai dengan isinya dan hindari penggunaan nama variabel yang terlalu singkat tanpa keterangan dokumentasi di samping atau di dekatnya.
 - Gunakan gaya penulisan yang konsisten seperti camelCase atau snake_case, namun dapat disesuaikan sesuai kebutuhan dan gaya penulisan pribadi.
